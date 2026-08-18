@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhamar Logistik - Solusi Pengiriman Terpercaya</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#004e9c', 
+                        dark: '#111827',
+                        light: '#f4f7fb'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body.modal-open { overflow: hidden; }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-light relative">
+
+    <!-- NAVIGATION -->
+    <nav class="flex items-center justify-between px-6 py-4 md:px-16 bg-white sticky top-0 z-50 border-b border-gray-100 shadow-sm">
+        <div class="flex items-center gap-3">
+            <a href="#beranda" class="hover:opacity-90 transition">
+                <img src="logo.png" alt="Logo Dhamar Logistik" class="h-10 md:h-12 w-auto object-contain">
+            </a>
+        </div>
+        <div class="hidden md:flex gap-10 font-semibold text-sm text-gray-700">
+            <a href="#beranda" class="hover:text-primary transition pb-1">Beranda</a>
+            <a href="#tentang-kami" class="hover:text-primary transition pb-1">Tentang Kami</a>
+            <a href="#layanan" class="hover:text-primary transition pb-1">Layanan</a>
+            <a href="#kontak" class="hover:text-primary transition pb-1">Kontak</a>
+        </div>
+        <a href="https://wa.me/6285320222187" target="_blank" class="bg-primary text-white px-5 py-2.5 rounded-full font-medium hover:bg-blue-800 transition flex items-center gap-2 shadow-md text-sm">
+            <i class="fab fa-whatsapp"></i> Kontak Kami
+        </a>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="beranda" class="relative bg-gradient-to-b from-[#e7f0f9] to-white pt-20 pb-44 lg:pt-24 lg:pb-56 overflow-hidden min-h-[650px]">
+        <div class="absolute top-0 right-0 w-full md:w-[60%] h-full z-0 hidden md:block bg-blue-100/40" style="clip-path: polygon(18% 0, 100% 0, 100% 100%, 0% 100%);"></div>
+
+        <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none hidden md:block">
+            <div class="absolute top-[20%] right-[35%] w-96 h-96 bg-white/40 border border-white/60 transform rotate-45 backdrop-blur-sm shadow-xl"></div>
+            <div class="absolute top-[50%] right-[45%] w-64 h-64 bg-blue-500/10 transform rotate-45"></div>
+        </div>
+
+        <div class="w-full max-w-7xl mx-auto px-6 md:px-16 relative z-10 flex flex-col md:flex-row items-center h-full">
+            <div class="w-full md:w-[50%] pt-10 md:pt-0 z-20">
+                <h4 class="text-primary font-bold mb-4 uppercase tracking-widest text-xs">DHAMAR LOGISTIK</h4>
+                <h1 class="text-4xl md:text-5xl lg:text-[52px] font-extrabold text-[#0f172a] leading-[1.15] mb-6">
+                    Solusi Logistik & <br>
+                    <span class="text-primary">Ekspor Terpercaya</span>
+                </h1>
+                <p class="text-gray-600 mb-10 text-base md:text-lg max-w-md leading-relaxed font-medium">
+                    Layanan logistik profesional untuk kebutuhan distribusi domestik hingga fasilitas legalitas ekspor perusahaan Anda.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#layanan" class="bg-primary text-white px-8 py-3.5 rounded-full font-semibold hover:bg-blue-800 transition flex items-center gap-2 shadow-lg shadow-blue-500/40 text-sm">
+                        Layanan Kami <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="https://wa.me/6285320222187" target="_blank" class="bg-white border border-primary text-primary px-8 py-3.5 rounded-full font-semibold hover:bg-blue-50 transition flex items-center gap-2 shadow-sm text-sm">
+                        <i class="fab fa-whatsapp"></i> Hubungi Kami
+                    </a>
+                </div>
+            </div>
+
+            <div class="w-full md:w-[50%] mt-12 md:mt-0 relative z-20 flex justify-center md:justify-end">
+                <img src="Truk.png" alt="Truk Dhamar Logistik" class="w-full max-w-[600px] lg:max-w-[750px] h-auto drop-shadow-[0_20px_25px_rgba(0,0,0,0.15)] md:scale-110 lg:scale-125 md:translate-x-10 transform origin-right">
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES BANNER -->
+    <div class="px-6 md:px-16 -mt-24 relative z-30 max-w-7xl mx-auto">
+        <div class="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4 divide-y md:divide-y-0 lg:divide-x divide-gray-100 border border-gray-50">
+            <div class="flex items-start gap-4 px-2 pt-4 md:pt-0">
+                <div class="bg-[#e7f0f9] text-primary p-3 rounded-full flex-shrink-0"><i class="fa-solid fa-shield-halved text-xl"></i></div>
+                <div>
+                    <h4 class="font-bold text-dark mb-1 text-sm">Aman & Terpercaya</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed font-medium">Keamanan kargo Anda adalah prioritas utama kami.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4 px-2 lg:px-6 pt-4 md:pt-0">
+                <div class="bg-[#e7f0f9] text-primary p-3 rounded-full flex-shrink-0"><i class="fa-solid fa-clock-rotate-left text-xl"></i></div>
+                <div>
+                    <h4 class="font-bold text-dark mb-1 text-sm">Tepat Waktu</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed font-medium">Distribusi barang tepat waktu sesuai komitmen.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4 px-2 lg:px-6 pt-4 md:pt-0">
+                <div class="bg-[#e7f0f9] text-primary p-3 rounded-full flex-shrink-0"><i class="fa-solid fa-file-signature text-xl"></i></div>
+                <div>
+                    <h4 class="font-bold text-dark mb-1 text-sm">Legalitas Terjamin</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed font-medium">Dukungan dokumen kepabeanan yang resmi.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4 px-2 lg:px-6 pt-4 md:pt-0">
+                <div class="bg-[#e7f0f9] text-primary p-3 rounded-full flex-shrink-0"><i class="fa-solid fa-headset text-xl"></i></div>
+                <div>
+                    <h4 class="font-bold text-dark mb-1 text-sm">Pelayanan Profesional</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed font-medium">Tim spesialis siap memberikan layanan terbaik.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SERVICES SECTION -->
+    <section id="layanan" class="py-24 px-6 md:px-16 text-center bg-light scroll-mt-20">
+        <h4 class="text-primary font-bold mb-2 uppercase tracking-widest text-xs">LAYANAN KAMI</h4>
+        <h2 class="text-3xl md:text-[32px] font-extrabold text-dark mb-4">Solusi Pengiriman Bisnis Anda</h2>
+        <p class="text-gray-500 mb-14 max-w-2xl mx-auto text-sm leading-relaxed">Pilih layanan yang paling sesuai dengan kebutuhan logistik Anda. Kami mengelola kargo Anda dari hulu ke hilir dengan standar tertinggi.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 text-left border border-gray-100 group relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-blue-50 w-32 h-32 rounded-bl-full -z-10 group-hover:bg-primary/10 transition-colors duration-300"></div>
+                <div class="bg-[#e7f0f9] text-primary w-16 h-16 rounded-xl flex items-center justify-center mb-6 text-3xl group-hover:bg-primary group-hover:text-white transition duration-300 shadow-sm">
+                    <i class="fa-solid fa-truck"></i>
+                </div>
+                <h3 class="text-xl font-bold text-dark mb-3">Pengiriman Darat</h3>
+                <p class="text-gray-500 mb-5 text-sm leading-relaxed">Solusi logistik antar kota dan provinsi via jalur darat dengan armada terlengkap dan harga ekonomis.</p>
+                <ul class="space-y-2 mb-8">
+                    <li class="flex items-center text-sm text-gray-600 font-medium"><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Armada (Blind Van s/d Wingbox)</li>
+                    <li class="flex items-center text-sm text-gray-600 font-medium"><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Layanan Door-to-Door</li>
+                    <li class="flex items-center text-sm text-gray-600 font-medium"><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Asuransi Keamanan Barang</li>
+                </ul>
+                <button onclick="openModal('darat')" class="w-full bg-white border-2 border-primary text-primary py-3 rounded-xl font-bold text-sm hover:bg-primary hover:text-white transition duration-300">Lihat Detail Lengkap</button>
+            </div>
+            
+            <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 text-left border border-gray-100 group relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-blue-50 w-32 h-32 rounded-bl-full -z-10 group-hover:bg-primary/10 transition-colors duration-300"></div>
+                <div class="bg-[#e7f0f9] text-primary w-16 h-16 rounded-xl flex items-center justify-center mb-6 text-3xl group-hover:bg-primary group-hover:text-white transition duration-300 shadow-sm">
+                    <i class="fa-solid fa-boxes-packing"></i>
+                </div>
+                <h3 class="text-xl font-bold text-dark mb-3">Loading Stripping</h3>
+                <p class="text-gray-500 mb-5 text-sm leading-relaxed">Layanan bongkar muat kargo ke dalam dan keluar container yang tertata, rapi, dan diawasi dengan ketat.</p>
+                <ul class="space-y-2 mb-8">
+                    <li class="flex items-center text-sm text-gray-600 font-medium"><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Tenaga Kerja Profesional (TKBM)</li>
+                    <li class="flex items-center text-sm text-gray-600 font-medium"><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Peralatan Berat Terstandardisasi</li>
+                    <li class="flex items-center text-sm text-gray-600 font-medium"><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Keamanan Barang Terjamin</li>
+                </ul>
+                <button onclick="openModal('loading')" class="w-full bg-white border-2 border-primary text-primary py-3 rounded-xl font-bold text-sm hover:bg-primary hover:text-white transition duration-300">Lihat Detail Lengkap</button>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 text-left border border-gray-100 group relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-blue-50 w-32 h-32 rounded-bl-full -z-10 group-hover:bg-primary/10 transition-colors duration-300"></div>
+                <div class="bg-[#e7f0f9] text-primary w-16 h-16 rounded-xl flex items-center justify-center mb-6 text-3xl group-hover:bg-primary group-hover:text-white transition duration-300 shadow-sm">
+                    <i class="fa-solid fa-file-contract"></i>
+                </div>
+                <h3 class="text-xl font-bold text-dark mb-3">Undername Export</h3>
+                <p class="text-gray-500 mb-5 text-sm leading-relaxed">Fasilitas legalitas bagi perusahaan Anda untuk melakukan aktivitas ekspor ke pasar global tanpa hambatan izin.</p>
+                <ul class="space-y-2 mb-8">
+                    <li class="flex items-center text-sm text-gray-600 font-medium"><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Penggunaan Lisensi Ekspor Resmi</li>
+                    <li class="flex items-center text-sm text-gray-600 font-medium"><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Pengurusan Dokumen Bea Cukai</li>
+                    <li class="flex items-center text-sm text-gray-600 font-medium"><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Proses Transparan & Cepat</li>
+                </ul>
+                <button onclick="openModal('undername')" class="w-full bg-white border-2 border-primary text-primary py-3 rounded-xl font-bold text-sm hover:bg-primary hover:text-white transition duration-300">Lihat Detail Lengkap</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT US SECTION -->
+    <section id="tentang-kami" class="py-20 px-6 md:px-16 flex flex-col md:flex-row items-center max-w-7xl mx-auto gap-12 bg-white scroll-mt-20">
+        <!-- Bagian Map Interaktif (Pin Point Cirebon) -->
+        <div class="md:w-1/2 w-full h-[350px] md:h-[400px] rounded-2xl shadow-lg overflow-hidden border-4 border-white bg-gray-200 relative group">
+            <iframe 
+                src="https://maps.google.com/maps?q=Perum%20Setu%20Permai%203%20Blok%20C%2033,%20Cirebon&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            </iframe>
+        </div>
+
+        <div class="md:w-1/2">
+            <h4 class="text-primary font-bold mb-3 uppercase tracking-widest text-xs">TENTANG KAMI</h4>
+            <h2 class="text-3xl md:text-[32px] font-extrabold text-dark mb-6 leading-tight">Mitra Logistik yang Dapat Anda Andalkan</h2>
+            <p class="text-gray-600 leading-relaxed mb-4 text-sm font-medium">
+                Dhamar Logistik adalah perusahaan yang bergerak di bidang jasa pengiriman dan pengurusan logistik terpadu. Sejak didirikan, kami berkomitmen memberikan pelayanan logistik yang mengutamakan kecepatan, keamanan, dan kepuasan pelanggan secara end-to-end.
+            </p>
+            <p class="text-gray-600 leading-relaxed text-sm font-medium mb-8">
+                Didukung oleh SDM yang profesional, armada operasional yang terintegrasi, serta layanan kepabeanan, kami siap menjadi tulang punggung rantai pasok untuk mendukung kelancaran distribusi serta ekspansi bisnis Anda hingga pasar mancanegara.
+            </p>
+            <div class="flex gap-8">
+                <div>
+                    <h3 class="text-3xl font-extrabold text-primary mb-1">5K+</h3>
+                    <p class="text-xs text-gray-500 font-semibold uppercase">Klien Terlayani</p>
+                </div>
+                <div>
+                    <h3 class="text-3xl font-extrabold text-primary mb-1">99%</h3>
+                    <p class="text-xs text-gray-500 font-semibold uppercase">Pengiriman Sukses</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="kontak" class="bg-[#0b1b36] text-white pt-16 pb-8 px-6 md:px-16 mt-10 border-t-4 border-primary">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 border-b border-gray-700 pb-12">
+            <div class="lg:pr-8">
+                <img src="logo.png" alt="Dhamar Logistik" class="h-16 w-auto mb-6 brightness-0 invert opacity-90">
+                <p class="text-gray-400 text-xs leading-relaxed">
+                    Dhamar Logistik berkomitmen memberikan solusi logistik, bongkar muat, hingga izin ekspor untuk kelancaran bisnis Anda tanpa batas ruang dan waktu.
+                </p>
+            </div>
+            
+            <div>
+                <h4 class="font-semibold text-sm mb-6 uppercase tracking-wider">Navigasi</h4>
+                <ul class="space-y-4 text-xs text-gray-400">
+                    <li><a href="#beranda" class="hover:text-white transition">Beranda</a></li>
+                    <li><a href="#tentang-kami" class="hover:text-white transition">Tentang Kami</a></li>
+                    <li><a href="#layanan" class="hover:text-white transition">Layanan</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-semibold text-sm mb-6 uppercase tracking-wider">Layanan</h4>
+                <ul class="space-y-4 text-xs text-gray-400">
+                    <li><a href="javascript:void(0)" onclick="openModal('darat')" class="hover:text-white transition">Pengiriman Darat</a></li>
+                    <li><a href="javascript:void(0)" onclick="openModal('loading')" class="hover:text-white transition">Loading Stripping</a></li>
+                    <li><a href="javascript:void(0)" onclick="openModal('undername')" class="hover:text-white transition">Undername Export</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-semibold text-sm mb-6 uppercase tracking-wider">Kontak Kami</h4>
+                <ul class="space-y-4 text-xs text-gray-400">
+                    <li class="flex items-start gap-4">
+                        <i class="fas fa-map-marker-alt mt-0.5 text-primary"></i>
+                        <span>Perum Setu Permai 3 Blok C 33<br>Kec. Weru, Kab. Cirebon, Jawa Barat</span>
+                    </li>
+                    <li class="flex items-center gap-4">
+                        <i class="fab fa-whatsapp text-primary"></i>
+                        <span>0853-2022-2187</span>
+                    </li>
+                    <li class="flex items-center gap-4">
+                        <i class="fas fa-envelope text-primary"></i>
+                        <span>info@dhamarlogistik.co.id</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 mt-8 gap-4">
+            <p>&copy; 2026 Dhamar Logistik. All rights reserved.</p>
+            <div class="flex gap-4">
+                <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary text-white transition"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary text-white transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary text-white transition"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL POPUP LAYANAN -->
+    <div id="serviceModal" class="fixed inset-0 z-[60] bg-dark/80 backdrop-blur-sm hidden flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden transform scale-95 transition-transform duration-300 relative" id="modalContent">
+            
+            <button onclick="closeModal()" class="absolute top-4 right-4 w-8 h-8 bg-gray-100 hover:bg-red-100 hover:text-red-600 rounded-full flex items-center justify-center text-gray-500 transition z-10">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <div class="bg-[#e7f0f9] p-6 text-center border-b border-blue-100">
+                <div id="modalIcon" class="w-16 h-16 bg-primary text-white rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4 shadow-lg shadow-blue-500/30">
+                    <i class="fa-solid fa-truck"></i>
+                </div>
+                <h3 id="modalTitle" class="text-2xl font-extrabold text-dark">Nama Layanan</h3>
+            </div>
+
+            <div class="p-6">
+                <p id="modalDesc" class="text-sm text-gray-600 leading-relaxed font-medium mb-6 text-center"></p>
+                <div class="bg-gray-50 rounded-xl p-4 border border-gray-100 mb-6">
+                    <h5 class="text-xs font-bold text-gray-800 uppercase tracking-widest mb-3">Keuntungan Utama:</h5>
+                    <ul id="modalFeatures" class="space-y-3"></ul>
+                </div>
+
+                <a href="https://wa.me/6285320222187" target="_blank" class="w-full bg-[#25D366] text-white py-3.5 rounded-xl font-bold text-sm hover:bg-[#1ebe57] transition flex items-center justify-center gap-2 shadow-lg shadow-green-500/30">
+                    <i class="fab fa-whatsapp text-lg"></i> Konsultasi & Penawaran Harga
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT UNTUK MODAL INTERAKTIF -->
+    <script>
+        const serviceData = {
+            darat: {
+                title: "Pengiriman Darat",
+                icon: "fa-truck",
+                desc: "Layanan logistik darat kami menjangkau seluruh rute kota dan provinsi di Indonesia. Kami memastikan efisiensi armada, rute, dan ketepatan waktu dengan biaya yang rasional.",
+                features: [
+                    "Banyak pilihan armada: Blind Van, Pick up, CDE, CDD, hingga Wingbox.",
+                    "Sistem penjemputan barang langsung dari lokasi Anda (Door-to-Door).",
+                    "Driver berpengalaman untuk memastikan keamanan barang."
+                ]
+            },
+            loading: {
+                title: "Loading Stripping",
+                icon: "fa-boxes-packing",
+                desc: "Kami menyediakan jasa bongkar (stripping) dan muat (loading) kargo dari dan ke dalam kontainer. Proses dilakukan dengan standar operasional ketat untuk meminimalisasi risiko kerusakan.",
+                features: [
+                    "Dikerjakan oleh Tenaga Kerja Bongkar Muat (TKBM) terlatih dan berpengalaman.",
+                    "Penyediaan peralatan mekanik pendukung yang sesuai spesifikasi kargo.",
+                    "Efisiensi waktu kerja agar Anda terhindar dari biaya penumpukan di pelabuhan/gudang."
+                ]
+            },
+            undername: {
+                title: "Undername Company Export",
+                icon: "fa-file-contract",
+                desc: "Solusi cepat dan legal bagi Anda atau perusahaan yang ingin mengirim produk ke pasar internasional namun belum memiliki lisensi dan izin kepabeanan ekspor yang lengkap.",
+                features: [
+                    "Peminjaman izin (Undername) yang sah dan terdaftar resmi di instansi terkait.",
+                    "Pengurusan seluruh dokumen ekspor (PEB, COO, dll) dari hulu ke hilir.",
+                    "Jaminan transparansi proses dan keamanan barang hingga tiba di negara tujuan."
+                ]
+            }
+        };
+
+        const modal = document.getElementById('serviceModal');
+        const modalContent = document.getElementById('modalContent');
+        const body = document.body;
+
+        function openModal(type) {
+            const data = serviceData[type];
+            
+            document.getElementById('modalTitle').innerText = data.title;
+            document.getElementById('modalIcon').innerHTML = `<i class="fa-solid ${data.icon}"></i>`;
+            document.getElementById('modalDesc').innerText = data.desc;
+            
+            const featuresList = document.getElementById('modalFeatures');
+            featuresList.innerHTML = '';
+            data.features.forEach(feature => {
+                featuresList.innerHTML += `
+                    <li class="flex items-start text-sm text-gray-700">
+                        <i class="fa-solid fa-check-circle text-primary mt-1 mr-3"></i> 
+                        <span>${feature}</span>
+                    </li>
+                `;
+            });
+
+            modal.classList.remove('hidden');
+            body.classList.add('modal-open');
+            
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            modal.classList.add('opacity-0');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                body.classList.remove('modal-open');
+            }, 300);
+        }
+
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
