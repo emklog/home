@@ -53,6 +53,61 @@
             -webkit-text-fill-color: transparent;
             background-image: linear-gradient(to right, #004e9c, #3b82f6);
         }
+
+        /* =========================================
+           CUSTOM MEDIA QUERIES 
+           ========================================= */
+
+        /* 1. Media Query untuk Layar Handphone Sangat Kecil (Layar di bawah 480px) */
+        @media screen and (max-width: 480px) {
+            .hero-title {
+                font-size: 2.5rem !important; /* Memperkecil ukuran judul agar tidak terpotong */
+                line-height: 1.1 !important;
+            }
+            .hero-subtitle {
+                font-size: 0.875rem !important;
+            }
+            /* Menyesuaikan jarak padding pada layar sempit */
+            section {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+        }
+
+        /* 2. Media Query untuk Aksesibilitas (Matikan animasi jika user sensitif terhadap gerakan) */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto !important;
+            }
+            .animate-float, .animate-pulse {
+                animation: none !important;
+                transform: none !important;
+            }
+            /* Matikan efek hover transisi yang terlalu cepat */
+            * {
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* 3. Media Query untuk Print (Menyembunyikan elemen UI saat halaman dicetak ke PDF/Kertas) */
+        @media print {
+            nav, footer, button, .fab, .fas, .fa-solid {
+                display: none !important;
+            }
+            body {
+                background: white !important;
+                color: black !important;
+            }
+            section {
+                padding: 0 !important;
+                margin-bottom: 2rem !important;
+            }
+            /* Menghilangkan background gradient saat diprint */
+            #beranda {
+                background: none !important;
+                min-height: auto !important;
+            }
+        }
     </style>
 </head>
 <body class="font-sans antialiased text-gray-800 bg-light relative selection:bg-primary selection:text-white">
@@ -77,20 +132,16 @@
         </a>
     </nav>
 
-    <!-- HERO SECTION (Diperbarui Lebih Modern) -->
+    <!-- HERO SECTION -->
     <section id="beranda" class="relative pt-24 pb-32 lg:pt-32 lg:pb-48 overflow-hidden min-h-[700px] flex items-center bg-gradient-to-br from-white via-[#f0f7ff] to-white">
         
-        <!-- Modern Background Ornaments (Blurs) -->
+        <!-- Modern Background Ornaments -->
         <div class="absolute top-0 right-0 w-full h-full z-0 overflow-hidden pointer-events-none">
-            <!-- Soft Blue Blob Top Right -->
             <div class="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-blue-200/50 blur-[100px] opacity-70"></div>
-            <!-- Soft Blue Blob Bottom Left -->
             <div class="absolute top-1/2 -left-40 w-[500px] h-[500px] rounded-full bg-blue-300/30 blur-[120px] opacity-60"></div>
-            <!-- Decorative Dots Pattern -->
             <div class="absolute top-20 left-20 opacity-20 hidden lg:block" style="background-image: radial-gradient(#004e9c 2px, transparent 2px); background-size: 20px 20px; width: 200px; height: 200px;"></div>
         </div>
 
-        <!-- Hero Content Layout -->
         <div class="w-full max-w-7xl mx-auto px-6 md:px-16 relative z-10 flex flex-col md:flex-row items-center justify-between h-full gap-12">
             
             <!-- Teks -->
@@ -100,12 +151,12 @@
                     Solusi Logistik B2B
                 </div>
                 
-                <h1 class="text-[40px] md:text-5xl lg:text-[56px] font-extrabold text-dark leading-[1.1] mb-6 tracking-tight">
+                <h1 class="hero-title text-[40px] md:text-5xl lg:text-[56px] font-extrabold text-dark leading-[1.1] mb-6 tracking-tight">
                     Distribusi Tepat, <br>
                     <span class="text-gradient">Ekspor Melesat.</span>
                 </h1>
                 
-                <p class="text-gray-600 mb-10 text-base md:text-lg leading-relaxed font-medium">
+                <p class="hero-subtitle text-gray-600 mb-10 text-base md:text-lg leading-relaxed font-medium">
                     Mitra logistik profesional yang mengelola distribusi domestik, bongkar muat kargo, hingga fasilitas legalitas ekspor perusahaan Anda dengan standar tertinggi.
                 </p>
                 
@@ -119,20 +170,17 @@
                 </div>
             </div>
 
-            <!-- Gambar Truk.png dengan Animasi Float -->
+            <!-- Gambar Truk -->
             <div class="w-full md:w-[50%] lg:w-[55%] mt-12 md:mt-0 relative z-20 flex justify-center lg:justify-end">
-                <!-- Lingkaran latar belakang truk agar kontras -->
                 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] aspect-square bg-gradient-to-tr from-blue-100 to-white rounded-full blur-3xl opacity-50 z-0"></div>
-                
                 <img src="Truk.png" alt="Truk Dhamar Logistik" class="w-full max-w-[500px] lg:max-w-[750px] h-auto drop-shadow-[0_30px_30px_rgba(0,78,156,0.2)] animate-float relative z-10 lg:scale-110 lg:translate-x-8">
             </div>
         </div>
     </section>
 
-    <!-- FEATURES BANNER (Lebih Minimalis) -->
+    <!-- FEATURES BANNER -->
     <div class="px-6 md:px-16 -mt-16 relative z-30 max-w-7xl mx-auto">
         <div class="bg-white rounded-3xl shadow-[0_20px_40px_rgb(0,0,0,0.04)] p-8 lg:p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 border border-gray-50">
-            
             <div class="flex flex-col items-center text-center gap-3 px-2">
                 <div class="bg-blue-50 text-primary w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-2 group-hover:scale-110 transition">
                     <i class="fa-solid fa-shield-halved"></i>
@@ -140,7 +188,6 @@
                 <h4 class="font-bold text-dark text-base">Aman & Terpercaya</h4>
                 <p class="text-xs text-gray-500 font-medium">Asuransi dan pengamanan ketat untuk setiap kargo.</p>
             </div>
-
             <div class="flex flex-col items-center text-center gap-3 px-2">
                 <div class="bg-blue-50 text-primary w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-2">
                     <i class="fa-solid fa-clock-rotate-left"></i>
@@ -148,7 +195,6 @@
                 <h4 class="font-bold text-dark text-base">Tepat Waktu</h4>
                 <p class="text-xs text-gray-500 font-medium">Distribusi terjadwal sesuai SLA yang disepakati.</p>
             </div>
-
             <div class="flex flex-col items-center text-center gap-3 px-2">
                 <div class="bg-blue-50 text-primary w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-2">
                     <i class="fa-solid fa-file-signature"></i>
@@ -156,7 +202,6 @@
                 <h4 class="font-bold text-dark text-base">Legalitas Ekspor</h4>
                 <p class="text-xs text-gray-500 font-medium">Pengurusan izin kepabeanan yang resmi dan tuntas.</p>
             </div>
-
             <div class="flex flex-col items-center text-center gap-3 px-2">
                 <div class="bg-blue-50 text-primary w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-2">
                     <i class="fa-solid fa-headset"></i>
@@ -164,7 +209,6 @@
                 <h4 class="font-bold text-dark text-base">Layanan 24/7</h4>
                 <p class="text-xs text-gray-500 font-medium">Customer Support dedikatif untuk update status.</p>
             </div>
-
         </div>
     </div>
 
@@ -177,67 +221,52 @@
         </p>
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            <!-- Card 1: Darat -->
             <div class="bg-white p-8 lg:p-10 rounded-[2rem] shadow-sm hover:shadow-[0_30px_60px_rgba(0,78,156,0.08)] transition-all duration-500 text-left border border-gray-100 group relative overflow-hidden flex flex-col h-full transform hover:-translate-y-2">
                 <div class="bg-blue-50/50 absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
-                
                 <div class="bg-white border border-gray-100 text-primary w-16 h-16 rounded-2xl flex items-center justify-center mb-8 text-3xl shadow-sm group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                     <i class="fa-solid fa-truck-fast"></i>
                 </div>
-                
                 <h3 class="text-2xl font-extrabold text-dark mb-4">Pengiriman Darat</h3>
                 <p class="text-gray-500 mb-8 text-sm leading-relaxed flex-grow">Solusi logistik darat B2B antar kota dan provinsi dengan manajemen armada modern dan efisiensi rute terbaik.</p>
-                
                 <ul class="space-y-3 mb-10">
                     <li class="flex items-start text-sm text-gray-700 font-medium"><i class="fa-solid fa-circle-check text-primary mt-1 mr-3"></i> Armada Beragam (Pick Up s/d Wingbox)</li>
                     <li class="flex items-start text-sm text-gray-700 font-medium"><i class="fa-solid fa-circle-check text-primary mt-1 mr-3"></i> Layanan Door-to-Door</li>
                     <li class="flex items-start text-sm text-gray-700 font-medium"><i class="fa-solid fa-circle-check text-primary mt-1 mr-3"></i> Jaminan Keamanan & Asuransi</li>
                 </ul>
-                
                 <button onclick="openModal('darat')" class="w-full bg-white border-2 border-gray-200 text-dark py-4 rounded-xl font-bold text-sm group-hover:border-primary group-hover:bg-primary group-hover:text-white transition-all duration-300 flex justify-center items-center gap-2">
                     Pelajari Detail <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
             
-            <!-- Card 2: Loading Stripping -->
             <div class="bg-white p-8 lg:p-10 rounded-[2rem] shadow-sm hover:shadow-[0_30px_60px_rgba(0,78,156,0.08)] transition-all duration-500 text-left border border-gray-100 group relative overflow-hidden flex flex-col h-full transform hover:-translate-y-2">
                 <div class="bg-blue-50/50 absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
-                
                 <div class="bg-white border border-gray-100 text-primary w-16 h-16 rounded-2xl flex items-center justify-center mb-8 text-3xl shadow-sm group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                     <i class="fa-solid fa-boxes-packing"></i>
                 </div>
-                
                 <h3 class="text-2xl font-extrabold text-dark mb-4">Loading Stripping</h3>
                 <p class="text-gray-500 mb-8 text-sm leading-relaxed flex-grow">Jasa penanganan bongkar muat kargo ke dalam dan keluar kontainer dengan standar operasional pelabuhan/gudang.</p>
-                
                 <ul class="space-y-3 mb-10">
                     <li class="flex items-start text-sm text-gray-700 font-medium"><i class="fa-solid fa-circle-check text-primary mt-1 mr-3"></i> Tenaga Kerja Profesional (TKBM)</li>
                     <li class="flex items-start text-sm text-gray-700 font-medium"><i class="fa-solid fa-circle-check text-primary mt-1 mr-3"></i> Alat Berat Sesuai Spesifikasi Kargo</li>
                     <li class="flex items-start text-sm text-gray-700 font-medium"><i class="fa-solid fa-circle-check text-primary mt-1 mr-3"></i> Efisiensi Waktu Hindari Biaya Tumpuk</li>
                 </ul>
-                
                 <button onclick="openModal('loading')" class="w-full bg-white border-2 border-gray-200 text-dark py-4 rounded-xl font-bold text-sm group-hover:border-primary group-hover:bg-primary group-hover:text-white transition-all duration-300 flex justify-center items-center gap-2">
                     Pelajari Detail <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
 
-            <!-- Card 3: Undername -->
             <div class="bg-white p-8 lg:p-10 rounded-[2rem] shadow-sm hover:shadow-[0_30px_60px_rgba(0,78,156,0.08)] transition-all duration-500 text-left border border-gray-100 group relative overflow-hidden flex flex-col h-full transform hover:-translate-y-2">
                 <div class="bg-blue-50/50 absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
-                
                 <div class="bg-white border border-gray-100 text-primary w-16 h-16 rounded-2xl flex items-center justify-center mb-8 text-3xl shadow-sm group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                     <i class="fa-solid fa-file-contract"></i>
                 </div>
-                
                 <h3 class="text-2xl font-extrabold text-dark mb-4">Undername Export</h3>
                 <p class="text-gray-500 mb-8 text-sm leading-relaxed flex-grow">Fasilitas peminjaman izin legalitas bagi perusahaan Anda untuk melakukan aktivitas ekspor tanpa hambatan birokrasi.</p>
-                
                 <ul class="space-y-3 mb-10">
                     <li class="flex items-start text-sm text-gray-700 font-medium"><i class="fa-solid fa-circle-check text-primary mt-1 mr-3"></i> Penggunaan Lisensi Ekspor Resmi</li>
                     <li class="flex items-start text-sm text-gray-700 font-medium"><i class="fa-solid fa-circle-check text-primary mt-1 mr-3"></i> Pengurusan Dokumen Bea Cukai (PEB)</li>
                     <li class="flex items-start text-sm text-gray-700 font-medium"><i class="fa-solid fa-circle-check text-primary mt-1 mr-3"></i> Proses Legal, Transparan & Cepat</li>
                 </ul>
-                
                 <button onclick="openModal('undername')" class="w-full bg-white border-2 border-gray-200 text-dark py-4 rounded-xl font-bold text-sm group-hover:border-primary group-hover:bg-primary group-hover:text-white transition-all duration-300 flex justify-center items-center gap-2">
                     Pelajari Detail <i class="fas fa-arrow-right"></i>
                 </button>
@@ -248,7 +277,6 @@
     <!-- ABOUT US SECTION -->
     <section id="tentang-kami" class="py-24 px-6 md:px-16 bg-white scroll-mt-20">
         <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
-            <!-- Teks Tentang Kami -->
             <div class="w-full lg:w-1/2 order-2 lg:order-1">
                 <h4 class="text-primary font-bold mb-3 uppercase tracking-widest text-xs">TENTANG DHAMAR LOGISTIK</h4>
                 <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-6 leading-[1.2] tracking-tight">Mitra Strategis Rantai Pasok Anda</h2>
@@ -273,7 +301,6 @@
                 </div>
             </div>
 
-            <!-- Bagian Map Interaktif -->
             <div class="w-full lg:w-1/2 order-1 lg:order-2 h-[400px] lg:h-[500px] rounded-[2rem] shadow-2xl overflow-hidden border-8 border-white relative group">
                 <iframe 
                     src="https://maps.google.com/maps?q=Perum%20Setu%20Permai%203%20Blok%20C%2033,%20Cirebon&t=&z=15&ie=UTF8&iwloc=&output=embed" 
@@ -295,14 +322,11 @@
 
     <!-- FOOTER -->
     <footer id="kontak" class="bg-dark text-white pt-20 pb-8 px-6 md:px-16 mt-10 relative overflow-hidden">
-        <!-- Footer Blur Decor -->
         <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-blue-400 to-primary"></div>
         <div class="absolute -top-40 -left-40 w-96 h-96 bg-primary/20 blur-3xl rounded-full"></div>
 
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 border-b border-gray-800 pb-16 relative z-10">
-            
             <div class="lg:col-span-4 lg:pr-8">
-                <!-- Logo Footer dengan filter brightness-0 invert agar warna menjadi putih murni -->
                 <img src="logo.png" alt="Dhamar Logistik" class="h-16 w-auto mb-6 brightness-0 invert opacity-90">
                 <p class="text-gray-400 text-sm leading-relaxed mb-6">
                     Mitra pengiriman yang memberikan ketenangan pikiran. Solusi tuntas untuk logistik domestik, bongkar muat, dan legalitas ekspor.
@@ -364,12 +388,10 @@
                 <i class="fas fa-times"></i>
             </button>
 
-            <!-- Gradient Header in Modal -->
             <div class="bg-gradient-to-r from-blue-50 to-[#e7f0f9] p-8 text-center border-b border-blue-100 relative overflow-hidden">
                 <div class="absolute -top-10 -right-10 w-32 h-32 bg-primary/10 rounded-full blur-xl"></div>
                 
                 <div id="modalIcon" class="w-20 h-20 bg-white text-primary rounded-2xl flex items-center justify-center text-4xl mx-auto mb-4 shadow-[0_10px_30px_rgba(0,78,156,0.15)] relative z-10">
-                    <!-- Icon disisipkan via JS -->
                 </div>
                 <h3 id="modalTitle" class="text-2xl font-extrabold text-dark relative z-10">Nama Layanan</h3>
             </div>
@@ -380,7 +402,6 @@
                 <div class="mb-8">
                     <h5 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Fitur & Keuntungan:</h5>
                     <ul id="modalFeatures" class="space-y-4">
-                        <!-- Fitur disisipkan via JS -->
                     </ul>
                 </div>
 
@@ -453,7 +474,6 @@
             modal.classList.remove('hidden');
             body.classList.add('modal-open');
             
-            // Animasi masuk
             setTimeout(() => {
                 modal.classList.remove('opacity-0');
                 modalContent.classList.remove('scale-95');
@@ -462,7 +482,6 @@
         }
 
         function closeModal() {
-            // Animasi keluar
             modal.classList.add('opacity-0');
             modalContent.classList.remove('scale-100');
             modalContent.classList.add('scale-95');
@@ -473,7 +492,6 @@
             }, 300);
         }
 
-        // Tutup modal jika area luar diklik
         modal.addEventListener('click', function(e) {
             if (e.target === modal) {
                 closeModal();
